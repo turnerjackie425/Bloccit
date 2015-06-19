@@ -27,6 +27,9 @@ Things you may want to cover:
 
 Made with my mentor at [Bloc](http://bloc.io)
 
+<a href="https://git.heroku.com/bloccit-cp27.git>Bloccit</a>
+
+
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
