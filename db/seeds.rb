@@ -1,21 +1,17 @@
-require 'faker'
-
-50.times do
+1.times do 
   Post.create!(
-    title: Faker::Lorem.sentence,
-    body: Faker::Lorem.paragraph
+    title: "A Test Post",
+    body: "Let's see if this works!"
     )
-end
+  end
 
-posts = Post.all
+post = Post.all
 
-100.times do
+1.times do
   Comment.create!(
-    post: posts.sample,
-    body: Faker::Lorem.paragraph
-    )
+    post: post,
+    body: "The post worked, how 'bout the comment?"
+   )
 end
 
-puts "Seed finished"
-puts "#{Post.count} posts created"
-puts "#{Comment.count} commnets created"
+comment = Comment.all 
