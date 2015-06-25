@@ -1,3 +1,4 @@
+
 1.times do 
   Post.create!(
     title: "A Test Post",
@@ -5,7 +6,7 @@
     )
   end
 
-post = Post.all
+post = Post.create
 
 1.times do
   Comment.create!(
@@ -14,4 +15,4 @@ post = Post.all
    )
 end
 
-comment = Comment.all 
+comment = Comment.create
