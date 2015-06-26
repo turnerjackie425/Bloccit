@@ -1,4 +1,4 @@
-class AdvertisementController < ApplicationController
+class AdvertisementsController < ApplicationController
   def index
     @advertisement = advertisement.all
   end
