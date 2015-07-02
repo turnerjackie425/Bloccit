@@ -21,10 +21,10 @@
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
 
- 50.times do
-   Advertisement.create!(
-     title:  Faker::Lorem.advertisement
-   )
- end
- 
- advertisement = Advertisement.all
+10.times do 
+  Advertisement.create!(
+    title: Faker::Internet.domain_name,
+    copy: Faker::Company.catch_phrase,
+    price: 0
+  )
+end
