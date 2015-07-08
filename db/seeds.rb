@@ -25,6 +25,6 @@
   Advertisement.create!(
     title: Faker::Internet.domain_name,
     copy: Faker::Company.catch_phrase,
-    price: 0
+    price: 0 
   )
 end
