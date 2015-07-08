@@ -1,6 +1,5 @@
 class QuestionController < ApplicationController
   def index
-    @question = Question.all
   end
 
   def new
