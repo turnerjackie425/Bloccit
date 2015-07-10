@@ -7,8 +7,15 @@
     <div class="form-group">
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
-      </div
-      <div class="form-group">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, classL 'form-control', placeholder: "Enter passowrdpassowrd"
+    </div>
+    <div class="form-group">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, classL 'form-control', placeholder: "Enter password confirmation" %>
+    </div>
+    <div> class='form_group'>
+      <%= render "devise/shared/links" %>
+    </div>
+    <% end %>
+  </div>
+</div>
       
