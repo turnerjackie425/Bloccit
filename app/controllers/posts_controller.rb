@@ -36,4 +36,10 @@ class PostsController < ApplicationController
        render :edit
      end
    end
+
+  before_action :flash_attack
+
+    def flash_attack
+      flash[:notice] = "Flash Attack!!! muhahaha"
+    end
 end
