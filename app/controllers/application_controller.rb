@@ -14,12 +14,5 @@ class ApplicationController < ActionController::Base
 
   before_action :flash_attack
 
-    def flash_attack
-      flash[:notice] = "Flash Attack!!! muhahaha"
-    end
-
-
-   
-
 end
 
