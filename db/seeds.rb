@@ -32,7 +32,7 @@ users = User.all
  end
  
 user = User.first
-user.skip_confirmation!
+user.skip_reconfirmation!
 user.update_attributes!(
   email: 'turnerjackie425@gmail.com',
   password: 'helloworld'

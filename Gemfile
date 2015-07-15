@@ -59,3 +59,4 @@ group :development, :test do
 
 end
 
+gem 'figaro', '1.0'
