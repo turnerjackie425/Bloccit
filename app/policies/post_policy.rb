@@ -1,5 +1,6 @@
 class PostPolicy < ApplicationPolicy
   class Scope
+    
     attr_reader :user, :scope
      
     def initialize(user, scope)
@@ -11,7 +12,7 @@ class PostPolicy < ApplicationPolicy
       if user.admin? || user.moderator?
         scope.all
       else
-        scope.where(user :user)
+        # scope.where(user :user)
       end
     end   
   end
