@@ -11,7 +11,7 @@ class PostPolicy < ApplicationPolicy
       if user.admin? || user.moderator?
         scope.all
       else
-        #scope.where(:authorize => true)
+        scope.where(user :user)
       end
     end   
   end
