@@ -11,6 +11,7 @@ skip_before_action :flash_attack, only: [:index, :new]
 
   def show
     @post = Post.find(params[:id])
+  
   end
 
   def new

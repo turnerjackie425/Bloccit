@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :advertisements
   resources :posts
-  # get 'summary', to :create
-  # get 'summary' to :show
+  
+  get 'summary', to :create
+  get 'summary' to :show
 
   get 'about' => 'welcome#about'
   
