@@ -20,7 +20,7 @@ skip_before_action :flash_attack, only: [:index, :new]
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:title, :body))
+    @post = Post.new(post_params)
     @post.user = current_user
     @post.user = current_user
     if @post.save
@@ -40,7 +40,7 @@ skip_before_action :flash_attack, only: [:index, :new]
    def update
      @post = Post.find(params[:id])
      authorize @post
-     if @post.update_attributes(params.require(:post).permit(:title, :body))
+     if @post.update_attributes(post_params)
        flash[:notice] = "Post was updated."
        redirect_to @post
      else
@@ -48,5 +48,11 @@ skip_before_action :flash_attack, only: [:index, :new]
        render :edit
      end
    end
+
+   private
+
+  def post_params
+    params.require(:post).permit(:title, body)
+  end 
 
 end
