@@ -11,6 +11,7 @@ skip_before_action :flash_attack, only: [:index, :new]
 
   def show
     @post = Post.find(params[:id])
+    @summary = Post.summary
   end
 
   def new
@@ -22,6 +23,7 @@ skip_before_action :flash_attack, only: [:index, :new]
     @post = Post.new(params.require(:post).permit(:title, :body))
     @post.user = current_user
     @post.user = current_user 
+    @summary = @post.summary 
     if @post.save
       flash[:notice] = "Post was saved."
       redirect_to @post
