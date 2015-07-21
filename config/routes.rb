@@ -4,15 +4,14 @@ Rails.application.routes.draw do
   resources :users, only: [:update]
   resources :advertisements
   resources :posts
-<<<<<<< HEAD
+
   resources :summaries
-=======
+
   resources :topics
 
   resources :topics do
     resources :posts, except: [:index]
   end
->>>>>>> CP-40
 
   get 'about' => 'welcome#about'
   

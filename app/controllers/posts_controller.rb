@@ -11,12 +11,8 @@ skip_before_action :flash_attack, only: [:index, :new]
 
   def show
     @post = Post.find(params[:id])
-<<<<<<< HEAD
-  
-=======
     @topic = Topic.find(params[:topic_id])
     authorize @post
->>>>>>> CP-40
   end
 
   def new
@@ -26,12 +22,12 @@ skip_before_action :flash_attack, only: [:index, :new]
   end
 
   def create
-<<<<<<< HEAD
+
     @post = Post.new(post_params)
-=======
+
     @topic = Topic.find(params[:topic_id])
     @post = Post.new(params.require(:post).permit(:title, :body))
->>>>>>> CP-40
+
     @post.user = current_user
     @post.user = current_user
     if @post.save
