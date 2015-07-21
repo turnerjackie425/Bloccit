@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :advertisements
   resources :posts
 
-  get 'summary' to: 'posts#show'
-  get 'summary' to: 'posts#create'
+  # get 'summary' to: 'posts#show'
+  # get 'summary' to: 'posts#create'
 
   get 'about' => 'welcome#about'
   
