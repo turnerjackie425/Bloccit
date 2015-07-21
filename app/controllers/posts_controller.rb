@@ -11,28 +11,39 @@ skip_before_action :flash_attack, only: [:index, :new]
 
   def show
     @post = Post.find(params[:id])
+<<<<<<< HEAD
   
+=======
+    @topic = Topic.find(params[:topic_id])
+    authorize @post
+>>>>>>> CP-40
   end
 
   def new
+    @topic = Topic.find(params[:topic_id])
     @post = Post.new
     authorize @post
   end
 
   def create
+<<<<<<< HEAD
     @post = Post.new(post_params)
+=======
+    @topic = Topic.find(params[:topic_id])
+    @post = Post.new(params.require(:post).permit(:title, :body))
+>>>>>>> CP-40
     @post.user = current_user
     @post.user = current_user
     if @post.save
       flash[:notice] = "Post was saved."
-      redirect_to @post
-    else
+      redirect_to [@topic, @post]
       flash[:error] = "There was an error saving the post. Please try again."
       render :new
     end
   end
 
   def edit
+    @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
     authorize @post
   end
@@ -42,7 +53,7 @@ skip_before_action :flash_attack, only: [:index, :new]
      authorize @post
      if @post.update_attributes(post_params)
        flash[:notice] = "Post was updated."
-       redirect_to @post
+       redirect_to [@topic, @post]
      else
        flash[:error] = "There was an error saving the post. Please try again."
        render :edit
