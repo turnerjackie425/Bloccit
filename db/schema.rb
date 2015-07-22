@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150721161521) do
-=======
-ActiveRecord::Schema.define(version: 20150716190738) do
->>>>>>> CP-40
+ActiveRecord::Schema.define(version: 20150722165417) do
 
   create_table "advertisements", force: :cascade do |t|
     t.string   "title"
@@ -50,16 +46,11 @@ ActiveRecord::Schema.define(version: 20150716190738) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.integer  "topic_id"
-<<<<<<< HEAD
     t.integer  "posts_id"
     t.integer  "summary_id"
   end
 
   add_index "posts", ["summary_id"], name: "index_posts_on_summary_id"
-=======
-  end
-
->>>>>>> CP-40
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
@@ -99,6 +90,7 @@ ActiveRecord::Schema.define(version: 20150716190738) do
     t.datetime "updated_at",                          null: false
     t.string   "name"
     t.string   "role"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

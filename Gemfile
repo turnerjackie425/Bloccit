@@ -64,3 +64,14 @@ gem 'figaro', '1.0'
 gem 'pundit'
 
 gem 'redcarpet'
+
+gem  'carrierwave'
+
+gem 'fog'
+
+
+
+
+
+
+gem 'mini_magick'
