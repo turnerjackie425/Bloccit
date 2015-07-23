@@ -65,13 +65,8 @@ gem 'pundit'
 
 gem 'redcarpet'
 
-gem  'carrierwave'
+gem 'carrierwave'
 
 gem 'fog'
-
-
-
-
-
 
 gem 'mini_magick'
