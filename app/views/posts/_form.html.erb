@@ -19,7 +19,7 @@
    <% end %>
    <%= form_group_tag(post.errors[:image]) do %>
      <%= f.label :image %>
-     <%= f.image :image, class: 'form-control'%>
+     <%= f.text_area :image, class: 'form-control', placeholder: "Upload Image" %>
    <% end %>
    <div class="form-group">
      <%= f.submit "Save", class: 'btn btn-success' %>
