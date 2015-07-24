@@ -59,7 +59,7 @@ skip_before_action :flash_attack, only: [:index, :new]
    private
 
   def post_params
-    params.require(:post).permit(:title, body)
+    params.require(:post).permit(:title, body, :image, string)
   end 
 
   def markdown_title
@@ -68,8 +68,7 @@ skip_before_action :flash_attack, only: [:index, :new]
 
   def markdown_body
     render_as_markdown
-  end 
-
+  end
   
  private
 
