@@ -69,4 +69,4 @@ gem 'carrierwave'
 
 gem 'fog'
 
-gem 'mini_magick'
+ gem 'mini_magick', '~> 3.5.0'
