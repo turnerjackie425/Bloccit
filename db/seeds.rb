@@ -22,7 +22,7 @@ end
 topics = Topic.all
  
  # Create Posts
- 50.times do
+ 1000.times do
    Post.create!(
      user:   users.sample, 
      topic:  topics.sample,
