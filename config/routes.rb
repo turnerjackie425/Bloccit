@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resources :advertisements
   resources :posts
 
+  # resource :posts do
+  #   resources :comments, only: [:create]
+  # end
+
   resources :summaries
 
   resources :topics
