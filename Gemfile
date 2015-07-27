@@ -10,6 +10,8 @@ gem 'rails', '4.2.2'
  end
  
  group :development do
+   gem 'binding_of_caller'
+   gem 'better_errors'
    gem 'sqlite3'
  end
  
