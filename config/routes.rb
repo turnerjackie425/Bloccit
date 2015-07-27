@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'comments/create:string'
+
   devise_for :users
   resources :users, only: [:update]
   resources :advertisements
