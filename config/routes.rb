@@ -1,15 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'comments/create:string'
-
   devise_for :users
   resources :users, only: [:update]
   resources :advertisements
-  resources :posts
-
-  # resource :posts do
-  #   resources :comments, only: [:create]
-  # end
+  resources :posts, only: [:index]
 
   resources :summaries
 
