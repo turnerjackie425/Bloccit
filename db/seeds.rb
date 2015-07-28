@@ -71,7 +71,6 @@ moderator.skip_confirmation!
 moderator.save!
 
 # Create a member
-
 member = User.new(
   name: 'Member User',
   email: 'member@example.com',
