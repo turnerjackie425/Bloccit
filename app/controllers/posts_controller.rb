@@ -12,6 +12,7 @@ skip_before_action :flash_attack, only: [:index, :new]
   def show
     @post = Post.find(params[:id])
     @topic = Topic.find(params[:topic_id])
+    @comment = Comment.find(params[:id])
     authorize @post
   end
 
