@@ -1,4 +1,4 @@
- <h1><%= markdown @post.title %></h1>
+ <h1><%= markdown_to_html @post.title %></h1>
  
 <div class="row">
   <div class="col-md-8">
@@ -7,9 +7,8 @@
        submitted <%= time_ago_in_words(@post.created_at) %> ago by
        <%= @post.user.name %>
     </small>
-    <p><%= post.markdown_body %></p>
-    <%= image_tag @user.image_url%>
-  </div>
+    <p><%= markdown_to_html @post.body%></p>
+
   <div class="col-md-4">
     <% if policy(@post).edit? %>
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
@@ -22,3 +21,10 @@
 <% end %>
 
 <p><%= @post.body %></p>
+<div id='comments'>
+  <h2><%= @post.comments.count %> Comments </h2>
+  <%= render 'comments/form' %>
+
+  <h3>Add a comment:</h3>
+  <%= render 'comments/comment' %>
+</div>
