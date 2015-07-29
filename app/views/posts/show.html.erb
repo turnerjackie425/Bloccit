@@ -20,5 +20,6 @@
 <% if policy(@post).edit? %>
   <%= link_to "Edit", edit_post_path(@post), class: 'btn btn-success' %>
 <% end %>
+<%= link_to "New Comment", new_comment_post_path(@comment), class: 'btn btn-success' %>
 
 <p><%= @post.body %></p>
