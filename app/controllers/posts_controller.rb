@@ -34,6 +34,7 @@ skip_before_action :flash_attack, only: [:index, :new]
     if @post.save
       flash[:notice] = "Post was saved."
       redirect_to [@topic, @post]
+    else  
       flash[:error] = "There was an error saving the post. Please try again."
       render :new
     end
@@ -60,7 +61,7 @@ skip_before_action :flash_attack, only: [:index, :new]
    private
 
   def post_params
-    params.require(:post).permit(:title, body, :image, string)
+    params.require(:post).permit(:title, :body, :image )
   end 
 
   def markdown_title
