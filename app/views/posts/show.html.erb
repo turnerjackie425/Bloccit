@@ -19,6 +19,11 @@
 <% if policy(@post).edit? %>
   <%= link_to "Edit", edit_topic_post_path(@post), class: 'btn btn-success' %>
 <% end %>
+<% if policy(@comment).user = nil %>
+  <% hidden_field(:comments) %>
+<% else policy(@comment).user = true %>
+  <% policy(@comment) %>
+<% end %>
 
 <p><%= @post.body %></p>
 <div id='comments'>

@@ -7,6 +7,7 @@ skip_before_action :flash_attack, only: [:index, :new]
     @posts = Post.all
     authorize @posts
     @posts = policy_scope(Post)
+    authorize @comments
   end
 
   def show
@@ -14,12 +15,14 @@ skip_before_action :flash_attack, only: [:index, :new]
     @topic = Topic.find(params[:topic_id])
     @comment = @post.comments
     authorize @post
+    authorize @comments
   end
 
   def new
     @topic = Topic.find(params[:topic_id])
     @post = Post.new
     authorize @post
+    authorize @comments
   end
 
   def create
@@ -44,6 +47,7 @@ skip_before_action :flash_attack, only: [:index, :new]
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
     authorize @post
+    authorize @comments
   end
 
    def update

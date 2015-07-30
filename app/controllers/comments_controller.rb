@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
     else
       flash[:error] = "There was an error saving the post. Please try again."
       render :new
+    authorize @comments
   end
 
   def comment_params
