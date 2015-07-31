@@ -54,9 +54,9 @@ class TopicsController < ApplicationController
       render :show
     end
   end
-   end
 
-    def topics_params
+
+  def topics_params
     params.require(:topics).permit(:title, body)
   end 
 end
