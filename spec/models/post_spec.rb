@@ -4,7 +4,10 @@ describe Post do
   describe "vote methods" do
 
     before do
-      @post = Post.create(title: 'post title', body: 'Post bodies must be pretty long.')
+      @post = Post.new(title: 'Post title', body: 'Post bodies must be really long!!!')
+      post_user = double(votes: @post.votes)
+      allow(@post).to receive(:user) { post_user}
+      @post.save
       3.times { @post.votes.create(value: 1) }
       2.times { @post.votes.create(value: -1) }
     end
