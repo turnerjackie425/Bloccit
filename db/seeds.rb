@@ -13,9 +13,9 @@ end
 users = User.all
 
 # Create Topics
-15.times do
-    name:          Faker::Lorem.sentence,
-    description:   Faker::Lorem.paragraph
+15.times do(
+    name:   Faker::Lorem.sentence,
+    description: Faker::Lorem.paragraph
     )
 end
 topics = Topic.all

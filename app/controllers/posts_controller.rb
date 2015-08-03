@@ -76,6 +76,10 @@ skip_before_action :flash_attack, only: [:index, :new]
     end
   end
 
+  def after_create
+    
+  end
+
    private
 
   def post_params
