@@ -22,7 +22,7 @@ describe Post do
    end
 
     before do
-      @post = associated_post
+       @post = associated_post
        3.times { @post.votes.create(value: 1) }
        2.times { @post.votes.create(value: -1) }
     end
