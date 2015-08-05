@@ -14,7 +14,7 @@ class VotesController < ApplicationController
   private
 
   def load_post_and_vote
-    @post = Post.find(params[post_id])
+    @post = Post.find(params[:id])
     @vote = @post.votes.where(user_id: current_user.id).first
   end
 
