@@ -15,4 +15,28 @@ describe Comment do
 
     it "sends an email to users who have favorited the post" do
       favorite = @user.favirites.create(post: @post)
+
+      allow( FavoriteMailer )
+        .to receive(:new_comment)
+        .with(@user, @post, @comment)
+        .and_return( double(deliver_now: true) )
+
+        expect( FavoriteMailer )
+         .to receive(:new_comment)
+
+      @comment.save
+    end
+    
+    it "does not send emails to users who haven't" do
+      expect( FavoriteMailer )
+        .not_to receive(:new_comment)
+
+      @comment.save
+    end
+  end
+end
+
+
+
+
 end
