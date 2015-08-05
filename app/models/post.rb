@@ -28,8 +28,8 @@ class Post < ActiveRecord::Base
     votes.where(value: -1).count
   end
 
-  def points(sum)
-    sum = up_votes + down_votes
+  def points
+    up_votes + down_votes
   end
 
   def update_rank
