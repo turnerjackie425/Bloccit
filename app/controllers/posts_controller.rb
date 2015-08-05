@@ -35,7 +35,7 @@ skip_before_action :flash_attack, only: [:index, :new]
     @post.user = current_user
     @post.user = current_user
     if @post.save
-      @post.create_vote
+      save_with_initial_vote
       flash[:notice] = "Post was saved."
       redirect_to [@topic, @post]
     else  
