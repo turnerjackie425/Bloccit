@@ -16,6 +16,7 @@ skip_before_action :flash_attack, only: [:index, :new]
     @comment = @post.comments
     authorize @post
     authorize @comment
+    authorize @topic
   end
 
   def new
