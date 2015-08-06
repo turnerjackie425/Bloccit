@@ -15,7 +15,7 @@ skip_before_action :flash_attack, only: [:index, :new]
     @topic = Topic.find(params[:topic_id])
     @comment = @post.comments
     authorize @post
-    authorize @comments
+    authorize @comment
   end
 
   def new
