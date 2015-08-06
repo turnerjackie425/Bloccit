@@ -6,7 +6,8 @@ describe User do
 
   before do
     @post = associated_post
-    @favorite = Favorite.new(post: favorite)
+    @favorite = Favorite.new
+  end 
 
   describe "#favorited(post)" do
     it "returns 'nil' if the user has not favorited the post" do
@@ -18,6 +19,7 @@ describe User do
         expect(favorite).to be_true
       else
         expect(favorite).to be_nil
+      end
     end
   end
 end
