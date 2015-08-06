@@ -4,11 +4,20 @@ describe User do
   
   include TestFactories
 
+  before do
+    @post = associated_post
+    @favorite = Favorite.new(post: favorite)
+
   describe "#favorited(post)" do
-    xit "returns 'nil' if the user has not favorited the post" do
+    it "returns 'nil' if the user has not favorited the post" do
+       expect(favorite).to be_nil
     end
 
-    xit "returns the appropriate favorite if it exists" do
+    it "returns the appropriate favorite if it exists" do
+      if favorite.create?
+        expect(favorite).to be_true
+      else
+        expect(favorite).to be_nil
     end
   end
 end
