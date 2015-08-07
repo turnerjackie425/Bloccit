@@ -1,7 +1,7 @@
 class Topic < ActiveRecord::Base
   has_many :posts, dependent: :destroy
 
-  scope :visible_to(:publicly_viewable) 
+  scope :visible_to, :publicly_viewable 
    
   scope :publicly_viewable, -> (user) { user ? all : where(public: true) }
 
