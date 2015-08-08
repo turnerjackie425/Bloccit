@@ -14,14 +14,16 @@ module ApplicationHelper
     (redcarpet.render markdown).html_safe
   end
 
-   #{(current_user.voted(post) && current_user.voted(post).up_vote?) 
-   # ? 'voted' : '' }"
 
   def up_vote_link_classes(post)
-    current_user.voted(post) && current_user.voted(post).up_vote?) 
+    if current_user.voted(post).up_vote? 
+      flash[:notice]"Comment has been upvoted."
+    end
   end
 
   def down_vote_link_classes(post)
-    current_user.voted(post) && current_user.voted(post).down_vote?) 
+    if current_user.voted(post).down_vote?
+      flash[:notice]"Comment has been down voted"
+    end
   end
 end
