@@ -1,4 +1,5 @@
 module TestFactories
+
   def associated_post(options={})
     post_options = {
     title: 'Post title',
@@ -15,5 +16,14 @@ module TestFactories
     user.skip_confirmation!
     user.save
     user
+  end
+
+  FactoryGirl.define do
+    factory :user do
+      email 'test@example.com'
+      password 'F4K3P455W0RD'
+    end
+    # if needed
+    # is_active true
   end
 end
