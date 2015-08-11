@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factroy :post do
+  factory :post do
     title "Post Title"
     body "Post bodies must be pretty long."
     user
