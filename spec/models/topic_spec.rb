@@ -1,4 +1,4 @@
-describle Topic do 
+describe Topic do 
   describe "scopes" do
 
      before do
@@ -6,7 +6,7 @@ describle Topic do
       @private_topic = Topic.create(public: false)
     end
 
-    descrobe "publicly_viewable" do
+    describe "publicly_viewable" do
       it "returns a relation of all public topics" do
         expect(Topic.publicly_viewable).to eq( [@public_topic] )
       end

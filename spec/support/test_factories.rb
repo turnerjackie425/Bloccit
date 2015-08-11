@@ -18,12 +18,12 @@ module TestFactories
     user
   end
 
-  FactoryGirl.define do
-    factory :user do
-      email 'test@example.com'
-      password 'F4K3P455W0RD'
-    end
-    # if needed
-    # is_active true
-  end
+  # FactoryGirl.define do
+  #   factory :user do
+  #     email 'test@example.com'
+  #     password 'F4K3P455W0RD'
+  #   end
+  #   # if needed
+  #   # is_active true
+  # end
 end
