@@ -16,7 +16,7 @@ class TopicsController < ApplicationController
   end
 
   def edit
-    @topic - Topic.find(params[:id])
+    @topic = Topic.find(params[:id])
     authorize @topic
   end
  
